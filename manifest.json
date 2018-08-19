@@ -1,0 +1,19 @@
+{
+
+  "description": "Adblocker",
+  "manifest_version": 2,
+  "name": "Adblocker",
+  "version": "1.0",
+
+  "permissions": [
+    "webRequest",
+    "webRequestBlocking",
+    "cookies",
+    "<all_urls>"
+  ],
+
+  "background": {
+    "scripts": ["preprocessor.js"]
+  }
+
+}

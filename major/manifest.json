@@ -1,0 +1,46 @@
+{
+  "manifest_version": 2,
+  "name": "adb",
+  "description": "adblcker",
+  "version": "1.0",
+  "web_accessible_resources": [
+    "images/blocked.svg",
+    "userfilter.txt"
+  ],
+  "background": {
+    "scripts": [
+      "preprocessor.js",
+      "uimenu.js",
+      "blocker.js"
+    ]
+  },
+
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "contextMenus",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "storage",
+    "unlimitedStorage",
+    "notifications",
+    "menus",
+    "activeTab",
+    "privacy"
+  ],
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["removeele.js"]
+  }
+],
+  "optional_permissions": [
+    "history"
+  ],
+  "applications": {
+    "gecko": {
+      "strict_min_version": "55.0a2"
+    }
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "manifest_version": 2,
+  "name": "urlcontext",
+  "description": "Helper extension got adblocker to obtain the title of a url",
+  "version": "1.0",
+
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+
+  "permissions": [
+    "tabs",
+    "<all_urls>",
+    "contextMenus",
+    "webRequest",
+    "webRequestBlocking",
+    "webNavigation",
+    "storage",
+    "unlimitedStorage",
+    "notifications",
+    "menus",
+    "activeTab",
+    "privacy"
+  ],
+  "content_scripts": [
+  {
+    "matches": ["<all_urls>"],
+    "js": ["listener.js"]
+  }
+],
+  "optional_permissions": [
+    "history"
+  ],
+  "applications": {
+    "gecko": {
+      "strict_min_version": "55.0a2"
+    }
+  }
+}
